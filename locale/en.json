@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Search",
+    "description": "Command-palette search for the current conversation: Ctrl+F opens the panel, results are highlighted and filtered by role, deep search pages back through older history in the background, and Enter jumps to the message with a keyword flash."
+  }
+}
