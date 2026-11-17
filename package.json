@@ -1,0 +1,53 @@
+{
+  "name": "dsh-session-search",
+  "version": "1.0.0",
+  "description": "Command-palette style search for the current DSH conversation: Ctrl+F or the header search button, live results with role filters and highlighted matches, deep search pages back through older history in the background, and one-click jump with a keyword flash.",
+  "type": "module",
+  "license": "MIT",
+  "author": "shegan1",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "session-search",
+    "command-palette",
+    "jump-to-message"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./assets/icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs/DETAIL.md",
+    "assets/icon.svg",
+    "LICENSE",
+    "README.md",
+    "README.en.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shegan1/dsh-session-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shegan1/dsh-session-search/issues"
+  },
+  "homepage": "https://github.com/shegan1/dsh-session-search#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
