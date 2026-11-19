@@ -36,3 +36,4 @@
 
 - 参照 dsh-screenshot-button 发布形态：正式包名 `dsh-session-search`、双语 README、LICENSE、DEVLOG、meta 完善、`docs/DETAIL.md`、诊断日志保留（Console 而非文件，纯前端无需落盘）。
 - 功能清单：Ctrl+F（捕获阶段监听 + 按钮渲染时上报会话 id）、角色过滤（默认对话组排除机器过程行）、深度搜索（loadOlder 后台翻页 + 可取消 + 进度）、时间显示与时间序排序、关键词 Highlight API 闪烁、确定性跳转。
+- **发布路线（2026-11-19）**：本机 scoop git 2.54.0 的 `push` 子命令对所有仓库损坏（分派前 fatal not a git repository；ls-remote/status/log/commit 均正常，screenshot 仓库也复现）——穷尽 hooksPath/shim/沙箱/GIT_DIR 假设后实锤。改走 `gh api` Contents API 逐文件推送 + refs API 打 tag（refs 格式需 `ref`/`sha`，不是 `tag`/`object`）。SHA-256/SHA-1 双核对 12 文件与 GitHub 完全一致。遗留：git push 损坏建议 `scoop reset git` 修复；演示 GIF 用户补录后替换 `assets/demo-search.png` 静态图。
