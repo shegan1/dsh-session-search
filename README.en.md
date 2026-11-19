@@ -4,6 +4,8 @@
 
 Command-palette style search for the current DeepSeek Harness conversation. Open with `Ctrl+F` or the magnifier button in the session header, type a keyword for instant highlighted hits, filter by role, and press Enter to jump to the message with a keyword flash. Installs as a dsh bundle; no DSH source modifications.
 
+![Demo](assets/demo-search.png)
+
 ## Usage
 
 - **`Ctrl+F`** (or the header magnifier button): open the search panel;
@@ -44,7 +46,7 @@ Diagnostics go to the browser Console (`[session-search]` prefix: indexed row co
 
 ## Known limitations
 
-- Search covers the session's **loaded** message window; only the most recent page loads by default — older history needs deep search or a manual upward scroll first;
+- The panel indexes only the **loaded** message window on open (the most recent page by default); older history is one click away via the footer **deep search**, which loads it in the background — no manual scrolling. Deep search caps at 200 pages; beyond that, trust the reached-the-top notice;
 - Rows inside collapsed step-process groups are not searchable (the host keeps them `display:none`; jumping there would land nowhere). Expand the group and reopen the panel to include them;
 - Time labels depend on the host's clock elements: if a future host build renames the clock classes, the time column goes silently missing (search and jump unaffected);
 - Per-row text participates in matching up to 20k characters; the result list caps at 100 rows.
